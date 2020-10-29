@@ -1,0 +1,29 @@
+spring:
+  application:
+    name: item-service
+  profiles:
+    active: item8001
+  cloud:
+    config:
+      override-none: true
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://eureka1:2001/eureka, http://eureka2:2002/eureka
+
+---
+
+spring:
+  profiles: item8001
+
+server:
+  port: 8001
+
+
+---
+spring:
+  profiles: item8002
+
+server:
+  port: 8002
