@@ -16,6 +16,14 @@ eureka:
 feign:
   hystrix:
     enabled: true
+
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: hystrix.stream
+
 ---
 spring:
   profiles: default
@@ -23,11 +31,7 @@ spring:
 server:
   port: 8201
 
-management:
-  endpoints:
-    web:
-      exposure:
-        include: hystrix.stream
+
 ---
 spring:
   profiles: backup
